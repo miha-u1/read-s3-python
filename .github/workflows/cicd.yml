@@ -27,7 +27,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: ${{ secrets.OIDC_AWS }}
-          aws-region: us-west-3
+          aws-region: eu-west-3
 
       - name: Run s3 script
-        run: python s3|_list.py
+        run: python s3_list.py
