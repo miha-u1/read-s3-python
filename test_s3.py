@@ -37,4 +37,3 @@ def test_bucket_has_name():
         response = s3.list_buckets()
 
     assert response["Buckets"][0]["Name"] == "bucket1"
-    
