@@ -35,6 +35,15 @@ jobs:
       - name: Run tests and generate report
         run: pytest --junitxml=report.xml
 
+      - name: Debug - search file
+        run: |
+          echo "Directorul curent:"
+          pwd
+          echo "Fisiere in director:"
+          ls -la
+          echo "Cauta report.xml:"
+          find . -name "report.xml"
+
       - name: Upload test report
         uses: actions/upload-artifact@v4
         with:
