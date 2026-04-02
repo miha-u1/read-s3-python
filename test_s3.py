@@ -1,6 +1,7 @@
 import boto3
 from uittest.mock import patch, MagicMock
 
+
 def test_list_buckets_returns_list():
     """"Verify the function returns a list of buckets."""
     # Mock the boto3 client and its response
@@ -18,7 +19,8 @@ def test_list_buckets_returns_list():
     assert isinstance(response["Buckets"], list)
     assert len(response["Buckets"]) == 2
     assert response["Buckets"][0]["Name"] == "bucket1"
-    assert response["Buckets"][1]["Name"] == "bucket2"  
+    assert response["Buckets"][1]["Name"] == "bucket2"
+
 
 def test_bucket_has_name():
     """Verify that each bucket has a name."""
