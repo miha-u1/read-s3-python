@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Config python
         uses: actions/setup-python@v5
@@ -24,7 +24,7 @@ jobs:
         run: pip install boto3 pytest flake8
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.OIDC_AWS }}
           aws-region: eu-west-3
@@ -39,6 +39,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-report
-          path: report.xml
+          path: ${{ github.workspace }}/report.xml
       - name: Run s3 script
         run: python s3_list.py
