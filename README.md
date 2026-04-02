@@ -1,0 +1,1 @@
+![Build Status](https://github.com/<user>/<repo>/actions/workflows/ci.yml/badge.svg)
