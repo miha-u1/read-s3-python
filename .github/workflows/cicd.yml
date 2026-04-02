@@ -2,7 +2,7 @@ name: s3 List Buckets
 
 on:
   push:
-    branches: [main, pull_request]
+    branches: [main, feature/**]
   workflow_dispatch:
 permissions:
   id-token: write
