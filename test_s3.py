@@ -1,5 +1,5 @@
 import boto3
-from uittest.mock import patch, MagicMock
+from unittest.mock import patch, MagicMock
 
 
 def test_list_buckets_returns_list():
