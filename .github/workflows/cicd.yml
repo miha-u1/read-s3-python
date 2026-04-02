@@ -21,7 +21,7 @@ jobs:
           python-version: '3.12'
 
       - name: Inatall boto3
-        run: pip install boto3
+        run: pip install boto3 pytest flake8
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -30,9 +30,7 @@ jobs:
           aws-region: eu-west-3
 
       - name: Run Linter
-        run: |
-          pip install flake8
-          flake8 .
+        run: flake8 .
 
       - name: Run tests and generate report
         run: pytest --junitxml=report.xml
